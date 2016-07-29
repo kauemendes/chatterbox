@@ -70,6 +70,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
     }
   })
+  .state('app.class', {
+    url: "/class",
+    views: {
+        'menuContent': {
+            templateUrl: "templates/class-main.html",
+            controller: 'ClassesCtrl'
+        }
+    }
+  })
   .state('app.session', {
       url: "/sessions/:sessionId",
       views: {

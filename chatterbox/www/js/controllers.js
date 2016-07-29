@@ -6,6 +6,14 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     };
 })
 
+.controller('ClassesCtrl', function($scope, Session) {
+    console.log("Loaded");
+    $scope.user = {
+      name:"Kauê Mendes",
+      teacher:"Kevin Smith"
+    };
+})
+
 .controller('StartCtrl', function($scope, LoginService, $ionicPopup, $state) {
     console.log("Loaded");
     $scope.user = {
