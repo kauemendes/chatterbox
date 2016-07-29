@@ -61,7 +61,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       console.log("The loading indicator is now displayed");
     });
 
-    setInterval(function () {
+    setTimeout(function () {
        $ionicLoading.hide().then(function(){
         console.log("The loading indicator is now hidden");
         $state.go('app.class');
