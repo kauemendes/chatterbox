@@ -4,13 +4,13 @@ angular.module('starter.controllers', ['starter.services'])
     console.log("Loaded");
 })
 
-<<<<<<< HEAD
 .controller('StartCtrl', function($scope, Session) {
     console.log("Loaded");
     $scope.user = {
       name:"Kauê Mendes"
     };
-=======
+})
+
 .controller('Assessment', function($scope, LoginService, $ionicPopup, $state) {
     console.log("Assessment Loaded");
     $scope.data = {};
@@ -19,7 +19,9 @@ angular.module('starter.controllers', ['starter.services'])
       $state.go('assessment-interest');
     };
 
->>>>>>> 4044b44346eccfed0af629c693a54e8b1d05edd1
+    $scope.goToStart = function(){
+      $state.go('app.start');
+    }
 })
 
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
@@ -27,11 +29,7 @@ angular.module('starter.controllers', ['starter.services'])
 
     $scope.login = function() {
         LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
-<<<<<<< HEAD
-            $state.go('app.start');
-=======
             $state.go('assessment');
->>>>>>> 4044b44346eccfed0af629c693a54e8b1d05edd1
         }).error(function(data) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login failed!',
