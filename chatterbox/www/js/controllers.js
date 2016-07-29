@@ -2,6 +2,9 @@ angular.module('starter.controllers', ['starter.services'])
 
 .controller('AppCtrl', function($scope, Session) {
     console.log("Loaded");
+    $scope.user = {
+      name:"Kauê Mendes"
+    };
 })
 
 .controller('StartCtrl', function($scope, Session) {
