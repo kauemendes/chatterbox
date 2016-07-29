@@ -29,6 +29,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: 'templates/login.html',
     controller: 'LoginCtrl'
   })
+  .state('assessment', {
+    url: '/assessment',
+    templateUrl: 'templates/assessment.html',
+    controller: 'Assessment'
+  })
+  .state('assessment-interest', {
+    url: '/assessment-interest',
+    templateUrl: 'templates/assessment-interest.html',
+    controller: 'Assessment'
+  })
   .state('app', {
     url: '/app',
     abstract: true,
@@ -49,15 +59,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       'menuContent' : {
           templateUrl: 'templates/browse.html',
       }
-    }
-  })
-  .state('app.sessions', {
-    url: "/sessions",
-    views: {
-        'menuContent': {
-            templateUrl: "templates/sessions.html",
-            controller: 'SessionsCtrl'
-        }
     }
   })
   .state('app.start', {
