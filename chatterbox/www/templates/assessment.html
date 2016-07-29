@@ -1,0 +1,18 @@
+<ion-header-bar class="bar-stable">
+    <h1 class="title">What are yours reasons for learning English?</h1>
+</ion-header-bar>
+<ion-content>
+    <ion-list>
+        <ion-checkbox ng-model="filter.professional">Professional</ion-checkbox>
+        <ion-checkbox ng-model="filter.trips">Trips</ion-checkbox>
+        <ion-checkbox ng-model="filter.entertainment">Entertainment</ion-checkbox>
+        <ion-checkbox ng-model="filter.academic">Academic</ion-checkbox>
+    </ion-list>
+</ion-content>
+<ion-footer-bar align-title="center" class="bar-assertive">
+    <h1 class="title"></h1>
+    <div class="buttons" >
+        <button class="button" ng-click="next()">OK</button>
+    </div>
+</ion-footer-bar>
+
