@@ -19,3 +19,23 @@ p.nameuser{
 ion-item.user-profile{
   background-color: #184B5F;
 }
+
+button.mic-record{
+  text-align: right;
+  margin-right: 0px;
+  float: right;
+  width: 120px;
+  height: 40px;
+}
+
+div.user-profile-inside{
+  background: #CCC;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  display: block;
+}
+
+.bar-footer{
+  height: 70px;
+}

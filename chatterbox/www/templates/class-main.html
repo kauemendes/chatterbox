@@ -19,8 +19,29 @@
       <button class="button button-positive" ng-click="record()">Gravar</button>
 
   </ion-content>
-  <ion-footer-bar  keyboard-attach class="bar-stable item-input-inset">
-    <label class="item-input-wrapper">
-      <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset" class="footer-class">
+    <div class="row">
+      <div class="col">
+        <div class="user-profile-inside"></div>
+      </div>
+      <div class="col">
+        <div class="user-profile-inside"></div>
+      </div>
+      <div class="col">
+        <div class="user-profile-inside"></div>
+      </div>
+      <div class="col">
+        <div class="user-profile-inside"></div>
+      </div>
+      <div class="col">
+        <div class="user-profile-inside"></div>
+      </div>
+      <div class="col">
+        <button class="button button-clear mic-record" ng-click="recordAudio()" >
+          <i class="ion-mic-a"></i>
+        </button>
+      </div>
+    </div>
+
   </ion-footer-bar>
 </ion-view>
