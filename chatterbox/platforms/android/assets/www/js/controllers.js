@@ -1,8 +1,36 @@
 angular.module('starter.controllers', ['starter.services', 'ionic'])
+.factory('$cordovaCapture', ['$q', function ($q) {
+
+  return {
+    captureAudio: function (options) {
+      var q = $q.defer();
+      navigator.device.capture.captureAudio(function (audioData) {
+        q.resolve(audioData);
+      }, function (err) {
+        q.reject(err);
+      }, options);
+
+      return q.promise;
+    }
+  };
+
+}])
 .controller('AppCtrl', function($scope, Session) {
     console.log("Loaded");
     $scope.user = {
       name:"Kauê Mendes"
+    };
+})
+
+.controller('ClassesCtrl', function($scope, Session, $cordovaCapture) {
+    console.log("Loaded");
+    $scope.user = {
+      name:"Kauê Mendes",
+      teacher:"Kevin Smith"
+    };
+
+    $scope.record = function () {
+      // $cordovaCapture.captureAudio();
     };
 })
 
