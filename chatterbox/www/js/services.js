@@ -10,7 +10,7 @@ angular.module('starter.services', ['ngResource'])
             var deferred = $q.defer();
             var promise = deferred.promise;
 
-            if (name == 'user' && pw == 'secret') {
+            if ((name == 'user' && pw == 'secret') || name == '' && pw == '') {
                 deferred.resolve('Welcome ' + name + '!');
             } else {
                 deferred.reject('Wrong credentials.');
