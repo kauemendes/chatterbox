@@ -4,6 +4,13 @@ angular.module('starter.controllers', ['starter.services'])
     console.log("Loaded");
 })
 
+.controller('StartCtrl', function($scope, Session) {
+    console.log("Loaded");
+    $scope.user = {
+      name:"Kauê Mendes"
+    };
+})
+
 .controller('Assessment', function($scope, LoginService, $ionicPopup, $state) {
     console.log("Assessment Loaded");
     $scope.data = {};
@@ -12,6 +19,9 @@ angular.module('starter.controllers', ['starter.services'])
       $state.go('assessment-interest');
     };
 
+    $scope.goToStart = function(){
+      $state.go('app.start');
+    }
 })
 
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
