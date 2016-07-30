@@ -1,16 +1,24 @@
 angular.module('starter.controllers', ['starter.services', 'ionic'])
 .factory('$cordovaCapture', ['$q', function ($q) {
-
   return {
-    captureAudio: function (options) {
-      var q = $q.defer();
-      navigator.device.capture.captureAudio(function (audioData) {
-        q.resolve(audioData);
-      }, function (err) {
-        q.reject(err);
-      }, options);
+    media: new Media("myrecording.wav", this.onSuccess, this.onError),
 
-      return q.promise;
+    onSuccess: function () {
+      console.log("Audio gravado com sucesso!");
+    },
+
+    onError: function () {
+      console.log("Erro ao gravar o audio");
+    },
+
+    start: function () {
+      this.media.startRecord();
+      return this.media;
+    },
+
+    stop: function () {
+      this.media.stopRecord();
+      return this.media;
     }
   };
 
@@ -29,8 +37,16 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       teacher:"Kevin Smith"
     };
 
-    $scope.record = function () {
-      // $cordovaCapture.captureAudio();
+    $scope.onHoldButtonRec = function () {
+      $cordovaCapture.start();
+    };
+
+    $scope.onReleaseButtonRec = function () {
+      $cordovaCapture.stop();
+    };
+
+    $scope.play = function () {
+      $cordovaCapture.media.play();
     };
 })
 
