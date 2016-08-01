@@ -2,11 +2,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
 .factory('$cordovaCapture', ['$q', function ($q) {
     return {
 
-      soundfx: new Media('/android_asset/www/recording.mp3', function () {
-          console.log("certo!");
-        }, function (err) {
-          console.log("Errado", err);
-        }),
+      soundfx: null,
       media: null,
       file_audio: null,
 
@@ -27,12 +23,21 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       },
 
       stop: function () {
-        this.media.stopRecord();
-        return this.file_audio;
+        if (this.media != null) {
+          this.media.stopRecord();
+          return this.file_audio;
+        }
       },
 
-      playFx: function () {
-        this.soundfx.play();
+      playFx: function (func) {
+        var fx = new Media('/android_asset/www/recording.mp3', function () {
+          console.log("certo!");
+        }, function (err) {
+          console.log("Errado", err);
+        }, func);
+        fx.play();
+        this.soundfx = fx;
+        return this.soundfx;
       }
 
 
@@ -55,8 +60,15 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     $scope.audioItens = [];
 
     $scope.onHoldButtonRec = function () {
-      $cordovaCapture.playFx();
-      $cordovaCapture.start();
+      $cordovaCapture.playFx(function (status) {
+        console.log("Status fx", status);
+        if (status == 4) {
+          console.log("Tocando");
+          $cordovaCapture.start();
+        }
+      });
+
+
     };
 
     $scope.onReleaseButtonRec = function () {
