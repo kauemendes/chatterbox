@@ -161,15 +161,20 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     $scope.teacher.rate.push({'name':'teste'});
     $scope.teacher.rate.push({'name':'teste'});
 
-
-    setTimeout(function(){
-        console.log("Executou");
-        $scope.finded_teacher = false;
-    }.bind($scope), 1000);
-
     $scope.goClass = function() {
         $state.go('class');
     }
+
+    $scope.teacherClick = function(){
+        if($scope.finded_teacher)
+            $scope.finded_teacher = false;
+        else
+            $scope.finded_teacher = true;
+    }
+
+    setTimeout(function(){
+        $scope.teacherClick()
+    }.bind($scope), 2000);
 
 })
 
