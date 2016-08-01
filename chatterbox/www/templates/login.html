@@ -1,5 +1,5 @@
 <ion-view view-title="Login" name="login-view">
-  <ion-content class="padding">
+  <ion-content class="padding" scroll="false">
 
       <div class="logo">
           <img src="img/logotop.png" width="50%" height="50%" />
@@ -19,8 +19,9 @@
       </div>
 
       <button class="button button-block button-login" ng-click="login()">Login</button>
-      <div class="btn_loginface">
-        <button class="button button-block button-positive" ng-click="login()">Log in with Facebook</button>
-      </div>
+      <button class="button button-block button-positive" ng-click="login()" style="position:fixed;bottom:10px;width:95%">
+          Log in with Facebook
+      </button>
+
   </ion-content>
 </ion-view>
