@@ -121,7 +121,7 @@ div.header-item{
     margin: 0 auto;
     margin-bottom: 0px;
     position: fixed;
-    bottom: 0px;
+    bottom: -5px;
 }
 .goclass.empty {
     display: none;
