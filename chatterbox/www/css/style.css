@@ -101,3 +101,53 @@ div.user-profile-inside{
 .bar-footer{
   height: 70px;
 }
+
+.button-assess{
+  margin: 0px!important;
+  border-radius: 0px;
+  text-align: left;
+  height: 60px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 1.2em;
+  background-image: url("../img/arrow_right_icon.png") no-repeat center right;
+}
+
+.button-assess:nth-child(1){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #249244;
+  background-size: 4%;
+
+}
+.button-assess:nth-child(2){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #29A048;
+  background-size: 4%;
+}
+.button-assess:nth-child(3){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #2CA848;
+  background-size: 4%;
+
+}
+.button-assess:nth-child(4){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #2FB248;
+  background-size: 4%;
+}
+.button-assess:nth-child(5){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #32BC4B;
+  background-size: 4%;
+}
+.button-assess:nth-child(6){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #42C55A;
+  background-size: 4%;
+}
+.button-assess:nth-child(7){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #47CF5F;
+  background-size: 4%;
+}
+.button-assess:nth-child(8){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #52DD6B;
+  background-size: 4%;
+}
+.button-assess:nth-child(9){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #5FE677;
+  background-size: 4%;
+}
