@@ -1,7 +1,10 @@
 angular.module('starter.controllers', ['starter.services', 'ionic'])
 .factory('$cordovaCapture', ['$q', function ($q) {
     return {
-      media: new Media("myrecording.wav", this.onSuccess, this.onError),
+
+      soundfx: null,
+      media: null,
+      file_audio: null,
 
       onSuccess: function () {
         console.log("Audio gravado com sucesso!");
@@ -12,14 +15,32 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       },
 
       start: function () {
+        var random = Math.floor(Math.random()*(10000-1000+1)+1000);
+        this.file_audio = "myrecording"+String(random)+".wav";
+        this.media = new Media(this.file_audio, this.onSuccess, this.onError);
         this.media.startRecord();
         return this.media;
       },
 
       stop: function () {
-        this.media.stopRecord();
-        return this.media;
+        if (this.media != null) {
+          this.media.stopRecord();
+          return this.file_audio;
+        }
+      },
+
+      playFx: function (func) {
+        var fx = new Media('/android_asset/www/recording.mp3', function () {
+          console.log("certo!");
+        }, function (err) {
+          console.log("Errado", err);
+        }, func);
+        fx.play();
+        this.soundfx = fx;
+        return this.soundfx;
       }
+
+
     };
 }])
 .controller('AppCtrl', function($scope, Session) {
@@ -36,16 +57,44 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       teacher:"Kevin Smith"
     };
 
+    $scope.audioItens = [];
+
     $scope.onHoldButtonRec = function () {
-      $cordovaCapture.start();
+      $cordovaCapture.playFx(function (status) {
+        console.log("Status fx", status);
+        if (status == 4) {
+          console.log("Tocando");
+          $cordovaCapture.start();
+        }
+      });
+
+
     };
 
     $scope.onReleaseButtonRec = function () {
-      $cordovaCapture.stop();
+      var file = $cordovaCapture.stop();
+
+      $scope.audioItens.push({
+        name: 'blabla',
+        file: file,
+      });
+
+      console.log($scope.audioItens);
+
+    };
+
+    $scope.playSound = function (file) {
+          console.log("Tocando o audio!");
+          var audio = new Media(file);
+          audio.play();
     };
 
     $scope.play = function () {
       $cordovaCapture.media.play();
+    };
+
+    $scope.playFx = function () {
+      $cordovaCapture.playFx();
     };
 })
 
