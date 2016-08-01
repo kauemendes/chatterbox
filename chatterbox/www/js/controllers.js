@@ -25,14 +25,14 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
 .controller('AppCtrl', function($scope, Session) {
     console.log("Loaded");
     $scope.user = {
-      name:"Kauê Mendes"
+      name:"Mister User"
     };
 })
 
 .controller('ClassesCtrl', function($scope, Session, $cordovaCapture) {
     console.log("Loaded");
     $scope.user = {
-      name:"Kauê Mendes",
+      name:"Mister User",
       teacher:"Kevin Smith"
     };
 
@@ -52,7 +52,8 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
 .controller('StartCtrl', function($scope, LoginService, $ionicPopup, $state) {
     console.log("Loaded");
     $scope.user = {
-      name:"Kauê Mendes"
+      name:"Mister User",
+      teacher:"Kevin Smith"
     };
 
     $scope.goToAssessment = function () {
@@ -60,12 +61,12 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     };
 })
 
-.controller('Assessment', function($scope, $ionicLoading, $ionicPopup, $state) {
+.controller('AssessmentCtrl', function($scope, $ionicLoading, $ionicPopup, $state) {
   console.log("Assessment Loaded");
   $scope.data = {};
 
   $scope.next = function() {
-    $state.go('assessment-interest');
+    $state.go('class-main');
   };
 
 
@@ -83,6 +84,11 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       });
     }, 2000);
   };
+})
+
+.controller('StudentCtrl', function($scope, $ionicLoading, $ionicPopup, $state) {
+  console.log("Student LOADING");
+  
 })
 
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {

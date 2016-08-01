@@ -29,16 +29,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: 'templates/login.html',
     controller: 'LoginCtrl'
   })
+
   .state('assessment', {
     url: '/assessment',
     templateUrl: 'templates/assessment.html',
-    controller: 'Assessment'
+    controller: 'AssessmentCtrl'
   })
+
   .state('assessment-interest', {
     url: '/assessment-interest',
     templateUrl: 'templates/assessment-interest.html',
-    controller: 'Assessment'
+    controller: 'AssessmentCtrl'
   })
+
+  .state('load-student-class', {
+    url: '/load-student-class',
+    templateUrl: 'templates/loading-student-class.html',
+    controller: 'StudentCtrl'
+  })
+
   .state('app', {
     url: '/app',
     abstract: true,
