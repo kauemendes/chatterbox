@@ -22,6 +22,12 @@
         </div>
     </div>
 
+      <div id="list-conversation">
+          <ul>
+              <li ng-repeat="audioItem in audioItens">{{audioItem.file}} - <a ng-click="playSound(audioItem.file)">Play</a></li>
+          </ul>
+      </div>
+
 
   </ion-content>
   <ion-footer-bar keyboard-attach class="bar-stable item-input-inset" class="footer-class">
@@ -42,7 +48,7 @@
         <div class="user-profile-inside"></div>
       </div>
       <div class="col">
-        <button class="button icon ion-android-microphone activated button-balanced" on-hold="playFx()"></button>
+        <button class="button icon ion-android-microphone activated button-balanced" on-hold="onHoldButtonRec()" on-release="onReleaseButtonRec()"></button>
       </div>
     </div>
 
