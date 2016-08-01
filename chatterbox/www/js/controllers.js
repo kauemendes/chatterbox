@@ -172,9 +172,11 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
             $scope.finded_teacher = true;
     }
 
+    console.log('$scope',$scope);
     setTimeout(function(){
-        $scope.teacherClick()
-    }.bind($scope), 2000);
+        $scope.teacherClick();
+        $scope.$apply();
+    }.bind($scope), 3000);
 
 })
 
