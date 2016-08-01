@@ -36,18 +36,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AssessmentCtrl'
   })
 
-  .state('assessment-interest', {
-    url: '/assessment-interest',
-    templateUrl: 'templates/assessment-interest.html',
+  .state('assessment-collective', {
+    url: '/assessment-collective',
+    templateUrl: 'templates/assessment-collective.html',
     controller: 'AssessmentCtrl'
   })
 
   .state('load-student-class', {
-    url: '/load-student-class',
+    url: '/load-student-class/:topic',
     templateUrl: 'templates/loading-student-class.html',
     controller: 'StudentCtrl'
   })
-
+  .state('class', {
+    url: "/class",
+    templateUrl: "templates/class-main.html",
+    controller: 'ClassesCtrl'
+  })
   .state('app', {
     url: '/app',
     abstract: true,
@@ -76,15 +80,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         'menuContent': {
             templateUrl: "templates/start.html",
             controller: 'StartCtrl'
-        }
-    }
-  })
-  .state('app.class', {
-    url: "/class",
-    views: {
-        'menuContent': {
-            templateUrl: "templates/class-main.html",
-            controller: 'ClassesCtrl'
         }
     }
   })

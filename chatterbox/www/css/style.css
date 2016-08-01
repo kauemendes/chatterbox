@@ -156,3 +156,71 @@ div.header-item{
   background: url("../img/arrow_right_icon.png") no-repeat center right 5% #5FE677;
   background-size: 4%;
 }
+
+.button-assecol{
+  margin: 0px!important;
+  border-radius: 0px;
+  text-align: left;
+  height: 60px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 1.2em;
+  background-image: url("../img/arrow_right_icon.png") no-repeat center right;
+}
+
+.button-assecol:nth-child(1){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #A04600;
+  background-size: 4%;
+
+}
+.button-assecol:nth-child(2){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #B54F01;
+  background-size: 4%;
+}
+.button-assecol:nth-child(3){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #CC5C06;
+  background-size: 4%;
+
+}
+.button-assecol:nth-child(4){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #D6660F;
+  background-size: 4%;
+}
+.button-assecol:nth-child(5){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #E06D14;
+  background-size: 4%;
+}
+.button-assecol:nth-child(6){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #E8741B;
+  background-size: 4%;
+}
+.button-assecol:nth-child(7){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #EE7F29;
+  background-size: 4%;
+}
+.button-assecol:nth-child(8){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #EF8736;
+  background-size: 4%;
+}
+.button-assecol:nth-child(9){
+  background: url("../img/arrow_right_icon.png") no-repeat center right 5% #EF9047;
+  background-size: 4%;
+}
+
+div.user_space h2{
+    font-weight: 400;
+    padding-top: 10px;
+    line-height: 10px;
+    font-size: 25px;
+    color: #FFF;
+    opacity: 0.7;
+}
+
+div.box-requesting{
+    height: 120px;
+}
+
+div.box-charging{
+    height: 5px;
+    background-color: #16751B;
+}

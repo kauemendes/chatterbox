@@ -56,8 +56,15 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       teacher:"Kevin Smith"
     };
 
-    $scope.goToAssessment = function () {
-      $state.go('assessment');
+    $scope.goToAssessment = function (val) {
+        if( val == "collective" )
+        {
+            $state.go('assessment-collective');
+        }
+        else
+        {
+            $state.go('assessment');
+        }
     };
 })
 
@@ -65,29 +72,32 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
   console.log("Assessment Loaded");
   $scope.data = {};
 
-  $scope.next = function() {
-    $state.go('load-student-class');
+  $scope.next = function(val) {
+      $scope.type = val;
+      $state.go('load-student-class', {'topic':val});
   };
 
-
-  $scope.show = function() {
-    $ionicLoading.show({
-      template: 'Loading...'
-    }).then(function(){
-      console.log("The loading indicator is now displayed");
-    });
-
-    setTimeout(function () {
-       $ionicLoading.hide().then(function(){
-        console.log("The loading indicator is now hidden");
-        $state.go('app.class');
-      });
-    }, 2000);
-  };
+  // $scope.show = function() {
+  //   $ionicLoading.show({
+  //     template: 'Loading...'
+  //   }).then(function(){
+  //     console.log("The loading indicator is now displayed");
+  //   });
+  //
+  //   setTimeout(function () {
+  //      $ionicLoading.hide().then(function(){
+  //       console.log("The loading indicator is now hidden");
+  //       $state.go('app.class');
+  //     });
+  //   }, 2000);
+  // };
 })
 
 .controller('StudentCtrl', function($scope, $ionicLoading, $ionicPopup, $state) {
-  console.log("Student LOADING");
+
+    $scope.goClass = function() {
+        $state.go('class');
+    }
 
 })
 

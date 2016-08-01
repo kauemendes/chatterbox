@@ -1,14 +1,16 @@
 <ion-view >
     <ion-content>
-        
         <div class="user_space">
             <div class="avatar">
                 <img src="img/avatar/avatar_user.png" />
                 <span>Mister User</span>
             </div>
-
-            <div class="item item-image" style="background-color: #39B54A;">
-
+            <div class="center box-requesting" style="background-color: #39B54A;">
+                <h2>Waiting</h2>
+                <h2>Classroom</h2>
+                <h3>{{$scope.type}}</h3>
+            </div>
+            <div class="box-charging">
             </div>
         </div>
 
@@ -17,11 +19,12 @@
                 <img src="img/avatar/avatar_user.png" />
                 <span>Mister User</span>
             </div>
-
             <div class="item item-image" style="background-color: #39B54A;">
-
             </div>
         </div>
 
+        <div class="">
+            <button class="button button-full" ng-click="goClass()">GO!</button>
+        </div>
     </ion-content>
 </ion-view>
