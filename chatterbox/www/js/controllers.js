@@ -86,6 +86,8 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     $scope.playSound = function (file) {
           console.log("Tocando o audio!");
           var audio = new Media(file);
+          console.log(this);
+          console.log($scope);
           audio.play();
     };
 

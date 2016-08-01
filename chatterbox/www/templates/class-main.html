@@ -5,73 +5,42 @@
             <img src="img/avatar/avatar_teacher.png" style="width: 100%"/>
         </div>
         <div style="background-color: rgb(21, 117, 27);">
-            <div class="row" >
+            <div class="row">
                 <div class="col col-25">
-                    <div class="user-profile-inside" style="margin: 0px auto;"></div>
+                    <img src="img/avatar/avatar_one.png" width="58%" style="margin: 0px auto;" />
                 </div>
                 <div class="col col-25">
-                    <div class="user-profile-inside" style="margin: 0px auto;"></div>
+                    <img src="img/avatar/avatar_two.png" width="58%" style="margin: 0px auto;" />
                 </div>
                 <div class="col col-25">
-                    <div class="user-profile-inside" style="margin: 0px auto;"></div>
+                    <img src="img/avatar/avatar_three.png" width="58%" style="margin: 0px auto;" />
                 </div>
                 <div class="col col-25">
-                    <div class="user-profile-inside" style="margin: 0px auto;"></div>
+                    <img src="img/avatar/avatar_four.png" width="58%" style="margin: 0px auto;" />
                 </div>
             </div>
         </div>
     </div>
 
       <div id="list-conversation" style="height: 80%; overflow: scroll;">
-
-          <div class="list card">
-
-              <div class="item item-avatar">
-                  <img src="img/logo.png" width="50px" height="50px">
-                  <h2>Marty McFly</h2>
+          <div class="list card" ng-repeat="audioItem in audioItens">
+              <div class="item item-avatar" style="float: left;">
+                  <img src="img/avatar/avatar_user.png" width="42px" height="42px">
+                  <h2>Kaue Mendes</h2>
                   <p>November 05, 1955</p>
               </div>
-          </div>
 
-          <div class="list card">
-
-              <div class="item item-avatar">
-                  <img src="img/logo.png" width="42px" height="42px">
-                  <div style="width: 10px; height: 10px;">
-                      <button class="button icon ion-play activated button-balanced "></button>
-                  </div>
+              <div class="item" style="float: right;">
+                  <button class="button icon ion-play activated button-balanced button-small pull-right" ng-click="playSound(audioItem.file)"></button>
               </div>
           </div>
-
-
-          <ul>
-              <li ng-repeat="audioItem in audioItens">{{audioItem.file}} - <a ng-click="playSound(audioItem.file)">Play</a></li>
-          </ul>
       </div>
 
 
   </ion-content>
-  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset" class="footer-class">
-    <div class="row">
-      <div class="col">
-        <div class="user-profile-inside"></div>
-      </div>
-      <div class="col">
-        <div class="user-profile-inside"></div>
-      </div>
-      <div class="col">
-        <div class="user-profile-inside"></div>
-      </div>
-      <div class="col">
-        <div class="user-profile-inside"></div>
-      </div>
-      <div class="col">
-        <div class="user-profile-inside"></div>
-      </div>
-      <div class="col">
-        <button class="button icon ion-android-microphone activated button-balanced" on-hold="onHoldButtonRec()" on-release="onReleaseButtonRec()"></button>
-      </div>
-    </div>
-
+  <ion-footer-bar class="" style="background: transparent;">
+      <button class="button center activated button-login button-bar" on-hold="onHoldButtonRec()" on-release="onReleaseButtonRec()">
+          <i class="icon ion-android-microphone"></i>
+      </button>
   </ion-footer-bar>
 </ion-view>
