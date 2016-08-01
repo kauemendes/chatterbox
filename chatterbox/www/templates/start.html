@@ -1,37 +1,38 @@
-<ion-view view-title="ChatterBox">
-  <ion-content>
-    <div class="list card">
-      <div class="item item-avatar">
-        <img src="img/avatar/avatar.png">
-        <h2>{{user.name}}</h2>
-        <p>You're doing great!</p>
-      </div>
-      <div class="item item-image">
-        <img src="img/graph.png">
-      </div>
-      <a class="item assertive" href="#">
-        Your level is
-        <i class="icon ion-star"></i>
-        <i class="icon ion-star"></i>
-        <i class="icon ion-star"></i>
-        <i class="ion-ios-star-half"></i>
-        <i class="icon ion-ios-star-outline"></i>
-        <i class="icon ion-ios-star-outline"></i>
-        <i class="icon ion-ios-star-outline"></i>
-        <i class="icon ion-ios-star-outline"></i>
-        <i class="icon ion-ios-star-outline"></i>
-        <i class="icon ion-ios-star-outline"></i>
-      </a>
-    </div>
-    <div class="item range">
-      <div>Private Class</div>
-      <i class="icon ion-person"></i>
-      <input type="range" name="private-or-community">
-      <i class="icon ion-person-stalker"></i>
-      <div>Community Class</div>
-    </div>
-    <button class="button button-block button-dark" ng-click="goToAssessment()">
-      Start Class
-    </button>
-  </ion-content>
+<ion-view >
+    <ion-content>
+
+        <div class="avatar">
+            <img src="img/avatar/avatar_user.png" />
+            <span>Mister User</span>
+        </div>
+
+        <div class="row text-color-1">
+          <div class="col col-50">
+              <img src="img/icons/chatbox_icon.png" width="20px" height="20px" />
+              4 classes</div>
+            <div class="col col-50 text-right">
+                <img src="img/icons/throphy_icon.png" width="20px" height="20px" />
+                Jedi warrior</div>
+        </div>
+
+        <div class="item item-image" style="background-color: rgba(0,0,0,0.6);">
+            <img src="img/graph.png" width="100%" >
+        </div>
+
+        <div >
+            <div style="width: 49.7%; float: left;">
+                <button class="button button-full button-balanced text-btn-start-class">
+                    Private
+                </button>
+
+            </div>
+            <div style="width: 49.7%; float: right;">
+                <button class="button button-full button-balanced text-btn-start-class">
+                    Collective
+                </button>
+
+            </div>
+        </div>
+
+    </ion-content>
 </ion-view>

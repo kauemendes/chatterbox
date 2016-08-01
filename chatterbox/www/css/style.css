@@ -1,5 +1,4 @@
 /* Empty. Add your own CSS if you like */
-
 .pane, .view {
   background: url('../img/background.png');
   background-size: 200% 100% !important;
@@ -29,6 +28,37 @@
   position: fixed;
   bottom: 47px;
   width: 100%;
+}
+
+/*Main screen*/
+
+.avatar img {
+  width: 100%;
+  height: 50%;
+}
+
+.avatar {
+  width: 30%;
+  margin: 15px auto 0px auto;
+  text-align: center;
+}
+.avatar span{
+  font-size: 22px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.bar-stable.bar.bar-header {
+  background-color: rgb(3, 28, 53);
+}
+
+.text-color-1 {
+  color: #FFFFFF;
+}
+
+.text-btn-start-class {
+  font-size: 22px;
+  font-weight: bold;
 }
 
 button .button-face!important{
