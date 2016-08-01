@@ -94,6 +94,29 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
 })
 
 .controller('StudentCtrl', function($scope, $ionicLoading, $ionicPopup, $state) {
+    $scope.finded_teacher = true;
+    $scope.topic          = $state.params.topic;
+
+    $scope.user = {
+      name:"Mister User",
+    };
+
+    $scope.teacher = {
+        name:"Mister Teacher",
+        rate: [],
+        classes: 29,
+    }
+
+    $scope.teacher.rate.push({'name':'teste'});
+    $scope.teacher.rate.push({'name':'teste'});
+    $scope.teacher.rate.push({'name':'teste'});
+    $scope.teacher.rate.push({'name':'teste'});
+
+
+    setTimeout(function(){
+        console.log("Executou");
+        $scope.finded_teacher = false;
+    }.bind($scope), 1000);
 
     $scope.goClass = function() {
         $state.go('class');
