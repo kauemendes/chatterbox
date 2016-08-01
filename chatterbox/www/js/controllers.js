@@ -1,7 +1,9 @@
 angular.module('starter.controllers', ['starter.services', 'ionic'])
 .factory('$cordovaCapture', ['$q', function ($q) {
     return {
-      media: new Media("myrecording.wav", this.onSuccess, this.onError),
+
+      soundfx: 'sounds/recording.mp3',
+      media: null,
 
       onSuccess: function () {
         console.log("Audio gravado com sucesso!");
@@ -12,6 +14,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       },
 
       start: function () {
+        this.media = new Media("myrecording.wav", this.onSuccess, this.onError);
         this.media.startRecord();
         return this.media;
       },
@@ -19,7 +22,14 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       stop: function () {
         this.media.stopRecord();
         return this.media;
+      },
+
+      playFx: function () {
+        var fx = new Media(this.soundfx);
+        fx.play();
       }
+
+
     };
 }])
 .controller('AppCtrl', function($scope, Session) {
@@ -46,6 +56,10 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
 
     $scope.play = function () {
       $cordovaCapture.media.play();
+    };
+
+    $scope.playFx = function () {
+      $cordovaCapture.playFx();
     };
 })
 
