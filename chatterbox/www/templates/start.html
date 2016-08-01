@@ -1,10 +1,9 @@
-<ion-view >
+<ion-view view-title="ChatterBox">
     <ion-content>
-
         <div class="avatar">
             <img src="img/avatar/avatar_user.png" />
-            <span>{{user.name}}</span>
         </div>
+        <div style="text-align: center; font-size: 22px; color: #ffffff; font-weight: bold;" >{{user.name}}</div>
 
         <div class="row text-color-1">
           <div class="col col-50">
@@ -19,18 +18,16 @@
             <img src="img/graph.png" width="100%" >
         </div>
 
-        <div >
+        <div style="margin-top: 10px">
             <div style="width: 49.7%; float: left;">
-                <button class="button button-full button-balanced text-btn-start-class">
+                <button class="button button-full button-balanced text-btn-start-class icon-left ion-arrow-left-b" ng-click="goToAssessment()">
                     Private
                 </button>
-
             </div>
             <div style="width: 49.7%; float: right;">
-                <button class="button button-full button-balanced text-btn-start-class">
+                <button class="button button-full button-balanced text-btn-start-class icon-right ion-arrow-right-b" ng-click="goToAssessment()">
                     Collective
                 </button>
-
             </div>
         </div>
 

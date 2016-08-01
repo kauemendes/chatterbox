@@ -66,7 +66,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
   $scope.data = {};
 
   $scope.next = function() {
-    $state.go('class-main');
+    $state.go('load-student-class');
   };
 
 
@@ -88,7 +88,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
 
 .controller('StudentCtrl', function($scope, $ionicLoading, $ionicPopup, $state) {
   console.log("Student LOADING");
-  
+
 })
 
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {

@@ -98,6 +98,11 @@ div.user-profile-inside{
   display: block;
 }
 
+div.header-item{
+    color: #FFF!important;
+    font-weight: bold!important;
+}
+
 .bar-footer{
   height: 70px;
 }
