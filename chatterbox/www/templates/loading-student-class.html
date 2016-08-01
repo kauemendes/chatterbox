@@ -1,5 +1,5 @@
 <ion-view >
-    <ion-content>
+    <ion-content scroll="false">
         <div class="user_space" ng-class="{empty: finded_teacher}">
             <div class="user_desc">
                 <div class="avatar" ng-click="teacherClick()">
@@ -15,8 +15,7 @@
                 <h2>{{$scope.topic}}</h2>
                 <h3>{{topic}}</h3>
             </div>
-            <div class="box-charging center">
-            </div>
+            <div class="box-charging"></div>
         </div>
 
         <div class="loading center"  ng-hide="!finded_teacher">

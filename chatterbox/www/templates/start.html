@@ -1,5 +1,5 @@
 <ion-view view-title="ChatterBox">
-    <ion-content>
+    <ion-content scroll="false">
         <div class="avatar">
             <img src="img/avatar/avatar_user.png" />
         </div>
@@ -20,7 +20,8 @@
             <img src="img/graph.png" width="100%" >
         </div>
 
-        <div style="margin-top: 10px">
+        <div style="position:fixed;bottom:5px;width:100%">
+            <h1 class="center" style="color: white; font-size: 25px;">Start Your Class Now!</h1>
             <div style="width: 49.7%; float: left;">
                 <button class="button button-full button-balanced text-btn-start-class icon-left ion-arrow-left-b" ng-click="goToAssessment('private')">
                     Private
