@@ -1,14 +1,26 @@
 <ion-view view-title="Login" name="login-view">
   <ion-content class="padding">
+
+      <div class="logo">
+          <img src="img/logotop.png" width="50%" height="50%" />
+      </div>
+
       <div class="list list-inset">
           <label class="item item-input">
+              <i class="icon ion-person placeholder-icon"></i>
               <input type="text" placeholder="Username" ng-model="data.username">
           </label>
+
           <label class="item item-input">
+              <i class="icon ion-ios-locked placeholder-icon"></i>
               <input type="password" placeholder="Password" ng-model="data.password">
           </label>
+
       </div>
-      <button class="button button-block button-calm" ng-click="login()">Login</button>
-      <button class="button button-block button-face" ng-click="login()">Log in with Facebook</button>
+
+      <button class="button button-block button-login" ng-click="login()">Login</button>
+      <div class="btn_loginface">
+        <button class="button button-block button-positive" ng-click="login()">Log in with Facebook</button>
+      </div>
   </ion-content>
 </ion-view>
