@@ -1,7 +1,7 @@
 <ion-view view-title="{{topic}}">
     <ion-nav-bar class="bar-stable">
         <ion-nav-buttons side="right">
-            <img src="img/logo.png" width="32px" height="32px" />
+            <i class=""></i>
         </ion-nav-buttons>
     </ion-nav-bar>
   <ion-content scroll="false">
@@ -44,8 +44,7 @@
 
   </ion-content>
   <ion-footer-bar class="" style="background: transparent;">
-      {{holding}}
-      <button class="button center activated button-record animated rubberBand" on-hold="onHoldButtonRec()" on-release="onReleaseButtonRec()" ng-class="{grow: holding}">
+      <button class="button center activated button-record" on-hold="onHoldButtonRec()" on-release="onReleaseButtonRec()" ng-class="{grow: holding}">
           <i class="icon ion-android-microphone"></i>
       </button>
   </ion-footer-bar>
