@@ -16,6 +16,8 @@
   margin-bottom: 0px;
 }
 
+
+
 .button.button-more-info {
   background: transparent;
   border: transparent;
@@ -86,7 +88,11 @@
 }
 
 .text-color-1 {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
+}
+
+.text-bold {
+  font-weight: bold !important;
 }
 
 .text-btn-start-class {
