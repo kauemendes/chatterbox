@@ -52,6 +52,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: "templates/class-main.html",
     controller: 'ClassesCtrl'
   })
+  .state('evaluate-teacher', {
+    url: "/evaluate-teacher/:topic",
+    templateUrl: "templates/evaluate-teacher.html",
+    controller: 'EvaluateCtrl'
+  })
   .state('app', {
     url: '/app',
     abstract: true,
