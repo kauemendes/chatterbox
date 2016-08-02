@@ -77,8 +77,7 @@ angular.module('ionic-ratings', ['ionic'])
     }
 });
 
-
-angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratings'])
+angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratings', 'chart.js'])
 .factory('$cordovaCapture', ['$q', function ($q) {
     return {
 
@@ -255,6 +254,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
 
 
 })
+
 .controller('EvaluateCtrl', function($scope, $state, $ionicLoading) {
     console.log('EvaluateCtrl');
     $scope.rating = 1;
@@ -305,7 +305,6 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
 })
 
 .controller('StartCtrl', function($scope, LoginService, $ionicPopup, $ionicLoading, $state) {
-    console.log("Loaded");
     $scope.user = {
       name:"Mister User",
       teacher:"Kevin Smith"
@@ -320,6 +319,36 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
         {
             $state.go('assessment');
         }
+    };
+
+    $scope.labels = ["Class 3", "Class 4", "Class 5", "Class 6", "Class 7", "Class 8"];
+    $scope.series = ['Acuracy'];
+    $scope.data = [
+        [9, 12, 18, 21, 36, 42]
+    ];
+
+    $scope.onClick = function (points, evt) {
+        console.log(points, evt);
+    };
+
+    $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+    $scope.options = {
+      scales: {
+        yAxes: [
+          {
+            id: 'y-axis-1',
+            type: 'linear',
+            display: true,
+            position: 'left'
+          },
+          {
+            id: 'y-axis-2',
+            type: 'linear',
+            display: true,
+            position: 'right'
+          }
+        ]
+      }
     };
 
     $ionicLoading.hide();

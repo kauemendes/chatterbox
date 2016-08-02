@@ -17,7 +17,10 @@
         </div>
 
         <div class="item item-image" style="background-color: rgba(0,0,0,0.6);">
-            <img src="img/graph.png" width="100%" >
+            <canvas id="line" class="chart chart-line" chart-data="data"
+            chart-labels="labels" chart-series="series" chart-options="options"
+            chart-dataset-override="datasetOverride" chart-click="onClick"
+            </canvas> 
         </div>
 
         <div style="position:fixed;bottom:5px;width:100%">
