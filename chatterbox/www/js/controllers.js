@@ -255,7 +255,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
 
 
 })
-.controller('EvaluateCtrl', function($scope, $state) {
+.controller('EvaluateCtrl', function($scope, $state, $ionicLoading) {
     console.log('EvaluateCtrl');
     $scope.rating = 1;
     $scope.topic = $state.params.topic;
@@ -274,13 +274,26 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
         }
     };
 
+    $scope.sending = function(){
+        $ionicLoading.show({
+          content: 'Loading',
+          animation: 'fade-in',
+          showBackdrop: true,
+          maxWidth: 200,
+          showDelay: 0
+        });
+        setTimeout(function(){
+            $state.go('app.start');
+            $ionicLoading.hide();
+        }, 2000);
+    }
+
 
     $scope.ratingsCallback = function(rating) {
-        console.log('Selected rating is : ', rating);
     };
 })
 
-.controller('StartCtrl', function($scope, LoginService, $ionicPopup, $state) {
+.controller('StartCtrl', function($scope, LoginService, $ionicPopup, $ionicLoading, $state) {
     console.log("Loaded");
     $scope.user = {
       name:"Mister User",
@@ -297,6 +310,8 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
             $state.go('assessment');
         }
     };
+
+    $ionicLoading.hide();
 })
 
 .controller('AssessmentCtrl', function($scope, $ionicLoading, $ionicPopup, $state) {
