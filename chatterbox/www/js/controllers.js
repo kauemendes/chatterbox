@@ -51,7 +51,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     };
 })
 
-.controller('ClassesCtrl', function($scope, Session, $cordovaCapture, $state, $ionicPopover) {
+.controller('ClassesCtrl', function($scope, Session, $cordovaCapture, $state, $ionicPopover, $ionicPopup) {
     console.log("Loaded");
     $scope.user = {
       name:"Mister User",
@@ -121,7 +121,28 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     };
 
     $scope.getout = function () {
-      $state.go('evaluate-teacher');
+
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Confirm',
+        template: 'Are you sure you want to quit?',
+        buttons: [
+          {
+            text: '<b>Yes</b>',
+            type: 'button-positive',
+            onTap: function(e) {
+              $state.go('evaluate-teacher');
+              $scope.popover.hide();
+            }
+          },
+          {
+            text: '<b>No</b>',
+            onTap: function(e) {
+              $scope.popover.hide();
+            }
+          }
+        ]
+      });
+
     };
 
     var template = 'templates/popover.html';
