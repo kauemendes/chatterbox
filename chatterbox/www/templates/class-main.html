@@ -29,16 +29,16 @@
         </div>
     </div>
 
-      <div id="list-conversation" style="height: 80%; overflow: scroll;">
+      <div id="list-conversation" style="height: 80%; overflow: scroll; height: 65%; margin-top: 2%;">
           <div class="list card" ng-repeat="audioItem in audioItens">
               <div class="item item-avatar" style="float: left;">
-                  <img src="img/avatar/avatar_user.png" width="42px" height="42px">
-                  <h2>Kaue Mendes</h2>
-                  <p>November 05, 1955</p>
+                  <img src="img/avatar/avatar_{{ audioItem.type }}.png" width="42px" height="42px">
+                  <h2>{{ audioItem.name }}</h2>
+                  <p>{{ audioItem.type }}</p>
               </div>
 
               <div class="item" style="float: right;">
-                  <button class="button icon ion-play activated button-balanced button-small pull-right" ng-click="playSound(audioItem.file)"></button>
+                  <button class="button icon ion-play activated button-balanced button-small pull-right" id="blabla{{ $index }}" ng-click="playSound(audioItem.file, $index)"></button>
               </div>
           </div>
       </div>

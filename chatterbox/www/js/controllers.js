@@ -30,7 +30,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       },
 
       playFx: function (func) {
-        var fx = new Media('/android_asset/www/recording.mp3', function () {
+        var fx = new Media('/android_asset/www/sounds/recording.mp3', function () {
           console.log("certo!");
         }, function (err) {
           console.log("Errado", err);
@@ -61,39 +61,44 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     $scope.holding = false;
     $scope.audioItens = [];
 
-
     $scope.onHoldButtonRec = function () {
         $scope.holding = true;
-      $cordovaCapture.playFx(function (status) {
-        console.log("Status fx", status);
-        if (status == 4) {
-          console.log("Tocando");
-          $cordovaCapture.start();
-        }
-      });
-      $scope.$apply();
-
+        setTimeout(function () {
+        $scope.audioItens.push({
+                type: 'teacher',
+                name: 'Mirian',
+                file: '/android_asset/www/sounds/teacher.wav'
+            });
+            $scope.$apply();
+        }, 2000);
     };
 
     $scope.onReleaseButtonRec = function () {
         $scope.holding = false;
-      var file = $cordovaCapture.stop();
+        var file = $cordovaCapture.stop();
 
-      $scope.audioItens.push({
-        name: 'blabla',
-        file: file,
-      });
-
-      console.log($scope.audioItens);
-      $scope.$apply();
+        $scope.audioItens.push({
+            name: 'Kaue Mendes',
+            type: 'user',
+            file: file
+        });
+        $scope.$apply();
     };
 
-    $scope.playSound = function (file) {
-          console.log("Tocando o audio!");
-          var audio = new Media(file);
-          console.log(this);
-          console.log($scope);
-          audio.play();
+    $scope.playSound = function (file, index) {
+      angular.element(document.querySelector('#blabla'+index))
+        .removeClass('ion-play')
+        .addClass('ion-load-d');
+      var audio = new Media(file, function(){}, function () {},
+      function (status) {
+        if (status == 4) {
+          angular.element(document.querySelector('#blabla'+index))
+          .removeClass('ion-load-d')
+          .addClass('ion-play');
+        }
+      });
+
+      audio.play();
     };
 
     $scope.play = function () {
