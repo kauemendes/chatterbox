@@ -61,22 +61,23 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     $scope.holding = false;
     $scope.audioItens = [];
 
+    setTimeout(function () {
+        $scope.audioItens.push({
+            type: 'teacher',
+            name: 'Mirian',
+            file: '/android_asset/www/sounds/teacher.wav'
+        });
+        $scope.$apply();
+    }, 2000);
+
     $scope.onHoldButtonRec = function () {
         $scope.holding = true;
-        setTimeout(function () {
-        $scope.audioItens.push({
-                type: 'teacher',
-                name: 'Mirian',
-                file: '/android_asset/www/sounds/teacher.wav'
-            });
-            $scope.$apply();
-        }, 2000);
+        $cordovaCapture.start();
     };
 
     $scope.onReleaseButtonRec = function () {
         $scope.holding = false;
         var file = $cordovaCapture.stop();
-
         $scope.audioItens.push({
             name: 'Kaue Mendes',
             type: 'user',
