@@ -209,7 +209,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
             text: '<b>Yes</b>',
             type: 'button-positive',
             onTap: function(e) {
-              $state.go('evaluate-teacher');
+              $state.go('evaluate-teacher', { 'topic': $scope.topic });
               $scope.popover.hide();
             }
           },
@@ -255,7 +255,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
 
 })
 
-.controller('EvaluateCtrl', function($scope, $state, $ionicLoading) {
+.controller('EvaluateCtrl', function($scope, $state, $ionicLoading, $ionicPopup) {
     console.log('EvaluateCtrl');
     $scope.rating = 1;
     $scope.topic = $state.params.topic;
@@ -294,11 +294,15 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
           showDelay: 0
         });
         setTimeout(function(){
-            $state.go('app.start');
+            $state.go('app.start', {'origin':'eval'});
             $ionicLoading.hide();
+            var alertPopup = $ionicPopup.alert({
+              title: 'You were rated by Mirian',
+              template: '<div class="center">Accuracy 95%</div>'
+            });
+
         }, 2000);
     }
-
 
     $scope.ratingsCallback = function(rating) {
     };
@@ -324,13 +328,13 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
     $scope.labels = ["Class 3", "Class 4", "Class 5", "Class 6", "Class 7", "Class 8"];
     $scope.series = ['Acuracy'];
     $scope.data = [
-        [9, 12, 18, 21, 36, 42]
+        [9, 12, 18, 21, 22, 24]
     ];
 
     $scope.onClick = function (points, evt) {
         console.log(points, evt);
     };
-
+    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
     $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
     $scope.options = {
       scales: {
@@ -339,17 +343,23 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
             id: 'y-axis-1',
             type: 'linear',
             display: true,
-            position: 'left'
+            position: 'left',
+            color: '#FFFFFF'
           },
           {
             id: 'y-axis-2',
             type: 'linear',
-            display: true,
+            display: false,
             position: 'right'
           }
         ]
       }
     };
+
+    if($state.params.origin == 'eval'){
+        $scope.data[0].push(65);
+        $scope.labels.push('Class 9');
+    }
 
     $ionicLoading.hide();
 })

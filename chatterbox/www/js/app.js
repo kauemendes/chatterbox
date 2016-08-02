@@ -80,7 +80,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
   .state('app.start', {
-    url: "/start",
+    url: "/start/:origin",
     views: {
         'menuContent': {
             templateUrl: "templates/start.html",
