@@ -297,8 +297,8 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
             $state.go('app.start');
             $ionicLoading.hide();
             var alertPopup = $ionicPopup.alert({
-              title: 'Don\'t eat that!',
-              template: 'It might taste good'
+              title: 'You were rated by Mirian',
+              template: 'Accuracy 95%'
             });
 
         }, 2000);
