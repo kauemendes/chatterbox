@@ -68,7 +68,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
             file: '/android_asset/www/sounds/teacher.wav'
         });
         $scope.$apply();
-    }, 2000);
+    }, 1000);
 
     $scope.onHoldButtonRec = function () {
         $scope.holding = true;
@@ -87,7 +87,11 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
             type: 'user',
             file: file
         });
-        $scope.$apply();
+
+        setTimeout(function (){
+          var lista = angular.element(document.querySelector('#list-conversation'));
+          lista[0].scrollTop = lista.prop("scrollHeight");
+        }, 500);
     };
 
     $scope.playSound = function (file, index) {
@@ -96,6 +100,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
         .addClass('ion-load-d');
       var audio = new Media(file, function(){}, function () {},
       function (status) {
+        console.log(status);
         if (status == 4) {
           angular.element(document.querySelector('#blabla'+index))
           .removeClass('ion-load-d')
