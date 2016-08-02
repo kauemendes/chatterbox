@@ -72,7 +72,11 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
 
     $scope.onHoldButtonRec = function () {
         $scope.holding = true;
-        $cordovaCapture.start();
+        $cordovaCapture.playFx(function (status) {
+          if (status == 4) {
+            $cordovaCapture.start();
+          }
+        });
     };
 
     $scope.onReleaseButtonRec = function () {
