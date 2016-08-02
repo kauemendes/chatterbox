@@ -260,6 +260,17 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
     $scope.rating = 1;
     $scope.topic = $state.params.topic;
 
+    $scope.changeClass = function (e) {
+      var $this = angular.element(e.toElement);
+      if ($this.hasClass('button-stable')) {
+        $this.removeClass('button-stable')
+        .addClass('button-dark');
+      } else {
+        $this.removeClass('button-dark')
+        .addClass('button-stable');
+      }
+    };
+
     $scope.ratingsObject = {
         iconOn: 'ion-ios-star',
         iconOff: 'ion-ios-star-outline',
