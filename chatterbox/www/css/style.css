@@ -285,3 +285,11 @@ div.box-charging{
     height: 5px;
     background-color: #16751B;
 }
+
+.ionic_ratings .icon {
+  font-size:50px;
+}
+
+.ionic_ratings .read_only {
+  pointer-events:none;
+}
