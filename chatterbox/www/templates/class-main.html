@@ -27,7 +27,7 @@
         </div>
     </div>
 
-      <div id="list-conversation" style="height: 80%; overflow: scroll; height: 65%; margin-top: 2%;">
+      <div id="list-conversation" style="height: 90%; overflow: scroll; height: 65%; background: url(img/chat_background.png) center center; background-size: 80%">
           <div class="list card" ng-repeat="audioItem in audioItens">
               <div class="item item-avatar" style="float: left;">
                   <img src="img/avatar/avatar_{{ audioItem.type }}.png" width="42px" height="42px">
@@ -43,8 +43,8 @@
 
 
   </ion-content>
-  <ion-footer-bar class="" style="background: transparent;">
-      <button class="button center activated button-record" on-hold="onHoldButtonRec()" on-release="onReleaseButtonRec()" ng-class="{grow: holding}">
+  <ion-footer-bar class="" style="background: transparent!important;">
+      <button class="button center activated button-record" on-hold="onHoldButtonRec()" on-release="onReleaseButtonRec()" ng-class="{grow: holding}" style="">
           <i class="icon ion-android-microphone"></i>
       </button>
   </ion-footer-bar>
