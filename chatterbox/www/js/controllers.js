@@ -87,7 +87,6 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
             type: 'user',
             file: file
         });
-        $scope.$apply();
     };
 
     $scope.playSound = function (file, index) {
@@ -96,6 +95,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
         .addClass('ion-load-d');
       var audio = new Media(file, function(){}, function () {},
       function (status) {
+        console.log(status);
         if (status == 4) {
           angular.element(document.querySelector('#blabla'+index))
           .removeClass('ion-load-d')
