@@ -1,3 +1,4 @@
+Chart.defaults.global.defaultFontColor = '#FFFFFF';
 angular.module('ionic-ratings', ['ionic'])
 .directive('ionicRatings', function(){
     return {
@@ -325,8 +326,9 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
         }
     };
 
+    $scope.colors = ['#00E444','#1EF9A1','#7FFD1F','#68F000'];
     $scope.labels = ["Class 3", "Class 4", "Class 5", "Class 6", "Class 7", "Class 8"];
-    $scope.series = ['Acuracy'];
+    $scope.series = ['Accuracy'];
     $scope.data = [
         [9, 12, 18, 21, 22, 24]
     ];
@@ -334,9 +336,23 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
     $scope.onClick = function (points, evt) {
         console.log(points, evt);
     };
-    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
-    $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+    $scope.datasetOverride = [{
+        yAxisID: 'y-axis-1',
+        borderWidth: 3,
+        pointHoverRadius: 10,
+        lineTension: 0.2,
+        pointBorderWidth: 2,
+        spanGaps: false,
+        pointHitRadius: 20
+
+    },
+    {
+        yAxisID: 'y-axis-2',
+        pointHoverRadius: 5
+    }];
+
     $scope.options = {
+      responsive: true,
       scales: {
         yAxes: [
           {
@@ -344,16 +360,30 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
             type: 'linear',
             display: true,
             position: 'left',
-            color: '#FFFFFF'
           },
           {
             id: 'y-axis-2',
             type: 'linear',
             display: false,
-            position: 'right'
+            position: 'right',
+
           }
         ]
-      }
+      },
+      legend: {
+            display: false,
+            labels: {
+                fontColor: 'rgb(255,255, 255)'
+            }
+        },
+        hover: {
+            // Overrides the global setting
+            mode: 'label'
+        },
+        title: {
+            display: false,
+        },
+
     };
 
     if($state.params.origin == 'eval'){
