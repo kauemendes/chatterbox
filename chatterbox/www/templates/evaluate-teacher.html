@@ -28,8 +28,15 @@
 
             </div>
         </div>
+        <div class="content center" ng-show="rating<4">
+            <div class="row">
+                <div class="row" style="border: 1px solid #CCC; border-radius: 5px;">
+                    <textarea cols="100" rows="6" placeholder="Write something else you dislike"></textarea>
+                </div>
+            </div>
+        </div>
     </ion-content>
-    <button class="button center activated button-block" style="bottom: 0px; position: fixed;" ng-click="sending()">
+    <button class="button center activated button-block button-login" style="bottom: 0px; position: fixed;" ng-click="sending()">
         SEND
     </button>
 </ion-view>
