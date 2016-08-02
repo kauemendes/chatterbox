@@ -298,7 +298,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
             $ionicLoading.hide();
             var alertPopup = $ionicPopup.alert({
               title: 'You were rated by Mirian',
-              template: 'Accuracy 95%'
+              template: '<div class="center">Accuracy 95%</div>'
             });
 
         }, 2000);
