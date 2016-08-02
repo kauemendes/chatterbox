@@ -87,6 +87,11 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
             type: 'user',
             file: file
         });
+
+        setTimeout(function (){
+          var lista = angular.element(document.querySelector('#list-conversation'));
+          lista[0].scrollTop = lista.prop("scrollHeight");
+        }, 500);
     };
 
     $scope.playSound = function (file, index) {
