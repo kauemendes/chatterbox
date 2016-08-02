@@ -48,7 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'StudentCtrl'
   })
   .state('class', {
-    url: "/class",
+    url: "/class/:topic",
     templateUrl: "templates/class-main.html",
     controller: 'ClassesCtrl'
   })

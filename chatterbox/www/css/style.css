@@ -24,6 +24,22 @@
     font-weight: bold;
     font-size: 21px;
 }
+.button.button-record {
+    border-color: transparent;
+    background-color: #FF7D12;
+    color: #fff;
+    font-weight: bold;
+    font-size: 21px;
+    border-radius: 60px;
+    width: 60px;
+    transition: all 0.5s ease;
+    transform: scale(1);
+}
+
+.button-record.grow{
+    transform: scale(1.5) perspective(1px)
+}
+
 .btn_loginface{
     width: auto;
 }
@@ -176,6 +192,22 @@ div.header-item{
   font-size: 1.2em;
   background-image: url("../img/arrow_right_icon.png") no-repeat center right;
 }
+
+
+.button-assecol{
+    -webkit-animation: fadeInLeft 1s;
+    animation: fadeInLeft 1s;
+}
+
+.button-assecol.animated{
+  -webkit-animation-delay:200ms;
+  animation-delay:200ms;
+
+  /* override to make sure it's not inherited from other styles */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
 
 .button-assecol:nth-child(1){
   background: url("../img/arrow_right_icon.png") no-repeat center right 5% #A04600;

@@ -50,16 +50,20 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     };
 })
 
-.controller('ClassesCtrl', function($scope, Session, $cordovaCapture) {
+.controller('ClassesCtrl', function($scope, Session, $cordovaCapture, $state) {
     console.log("Loaded");
     $scope.user = {
       name:"Mister User",
-      teacher:"Kevin Smith"
+      teacher:"Mister Teacher"
     };
 
+    $scope.topic = $state.params.topic;
+    $scope.holding = false;
     $scope.audioItens = [];
 
+
     $scope.onHoldButtonRec = function () {
+        $scope.holding = true;
       $cordovaCapture.playFx(function (status) {
         console.log("Status fx", status);
         if (status == 4) {
@@ -67,11 +71,12 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
           $cordovaCapture.start();
         }
       });
-
+      $scope.$apply();
 
     };
 
     $scope.onReleaseButtonRec = function () {
+        $scope.holding = false;
       var file = $cordovaCapture.stop();
 
       $scope.audioItens.push({
@@ -80,7 +85,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       });
 
       console.log($scope.audioItens);
-
+      $scope.$apply();
     };
 
     $scope.playSound = function (file) {
@@ -164,7 +169,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     $scope.teacher.rate.push({'name':'teste'});
 
     $scope.goClass = function() {
-        $state.go('class');
+        $state.go('class', {'topic':$scope.topic});
     }
 
     $scope.teacherClick = function(){

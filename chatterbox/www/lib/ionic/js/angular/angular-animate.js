@@ -3540,7 +3540,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  *   transition: 1s linear all;
  *   opacity:0;
  * }
- * .my-animation.ng-enter-stagger {
+ * .my-animation.animated fadeInLeft {
  *   /&#42; this will have a 100ms delay between each successive leave animation &#42;/
  *   transition-delay: 0.1s;
  *
