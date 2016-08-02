@@ -68,7 +68,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
             file: '/android_asset/www/sounds/teacher.wav'
         });
         $scope.$apply();
-    }, 2000);
+    }, 1000);
 
     $scope.onHoldButtonRec = function () {
         $scope.holding = true;
