@@ -7,6 +7,21 @@
   background-attachment: fixed;
 }
 
+.popover.screen-class {
+  height: 55px;
+}
+
+.popover.screen-class .button.button-block {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.button.button-more-info {
+  background: transparent;
+  border: transparent;
+  color: #FFFFFF;
+}
+
 .logo img {
   width: 100%;
   height: 50%;
