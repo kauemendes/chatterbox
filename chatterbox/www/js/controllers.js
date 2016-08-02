@@ -43,6 +43,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
 
     };
 }])
+
 .controller('AppCtrl', function($scope, Session) {
     console.log("Loaded");
     $scope.user = {
@@ -119,6 +120,16 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
       $cordovaCapture.playFx();
     };
 })
+
+.controller('EvaluateCtrl', function($scope, $state){
+
+    $scope.topic = $state.params.topic;
+
+
+    console.log('EvaluateCtrl');
+
+})
+
 
 .controller('StartCtrl', function($scope, LoginService, $ionicPopup, $state) {
     console.log("Loaded");
