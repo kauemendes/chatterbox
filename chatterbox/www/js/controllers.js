@@ -50,7 +50,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     };
 })
 
-.controller('ClassesCtrl', function($scope, Session, $cordovaCapture, $state) {
+.controller('ClassesCtrl', function($scope, Session, $cordovaCapture, $state, $ionicPopover) {
     console.log("Loaded");
     $scope.user = {
       name:"Mister User",
@@ -118,6 +118,40 @@ angular.module('starter.controllers', ['starter.services', 'ionic'])
     $scope.playFx = function () {
       $cordovaCapture.playFx();
     };
+
+    $scope.getout = function () {
+      $state.go('evaluate-teacher');
+    };
+
+    var template = 'templates/popover.html';
+
+    $ionicPopover.fromTemplateUrl(template, {
+        scope: $scope
+    }).then(function(popover) {
+      $scope.popover = popover;
+    });
+
+    $scope.openPopover = function($event) {
+      console.log("popover");
+      $scope.popover.show($event);
+    };
+    $scope.closePopover = function() {
+      $scope.popover.hide();
+    };
+    //Cleanup the popover when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.popover.remove();
+    });
+    // Execute action on hide popover
+    $scope.$on('popover.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove popover
+    $scope.$on('popover.removed', function() {
+      // Execute action
+    });
+
+
 })
 
 .controller('StartCtrl', function($scope, LoginService, $ionicPopup, $state) {
