@@ -210,7 +210,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
             text: '<b>Yes</b>',
             type: 'button-positive',
             onTap: function(e) {
-              $state.go('evaluate-teacher');
+              $state.go('evaluate-teacher', { 'topic': $scope.topic });
               $scope.popover.hide();
             }
           },
@@ -255,7 +255,7 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
 
 
 })
-.controller('EvaluateCtrl', function($scope, $state, $ionicLoading) {
+.controller('EvaluateCtrl', function($scope, $state, $ionicLoading, $ionicPopup) {
     console.log('EvaluateCtrl');
     $scope.rating = 1;
     $scope.topic = $state.params.topic;
@@ -296,6 +296,11 @@ angular.module('starter.controllers', ['starter.services', 'ionic', 'ionic-ratin
         setTimeout(function(){
             $state.go('app.start');
             $ionicLoading.hide();
+            var alertPopup = $ionicPopup.alert({
+              title: 'Don\'t eat that!',
+              template: 'It might taste good'
+            });
+
         }, 2000);
     }
 
