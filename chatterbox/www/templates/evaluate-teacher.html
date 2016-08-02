@@ -2,12 +2,15 @@
     <ion-nav-bar class="bar-stable">
     </ion-nav-bar>
     <ion-content scroll="false" style="background-color: rgb(255,255,255)!important;">
-        <div style="">
-            <div class="center" style="height:auto; padding: 2%;">
+        <div style="padding-top: 15%;" class="animated bounceInRight">
+            <div class="center" style="height:auto;">
                 <img src="img/avatar/avatar_teacher.png" style="width: 25%"/>
             </div>
         </div>
-        <div class="content center">
+        <div>
+            <ionic-ratings ratingsobj='ratingsObject' class="animated bounceInLeft"></ionic-ratings>
+        </div>
+        <div class="content center" ng-show="rating<5">
             <div class="row">
                 <div class="col">
                     <button class="button button-stable" ng-click="changeClass($event)">Topic not covered</button>
@@ -25,7 +28,6 @@
 
             </div>
         </div>
-
     </ion-content>
     <button class="button center activated button-block" style="bottom: 0px; position: fixed;">
     SEND
